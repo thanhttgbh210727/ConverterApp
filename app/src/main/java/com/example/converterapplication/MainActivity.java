@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 double inputValue = Double.parseDouble(inputText);
                 double result = convert(inputValue, fromUnit, toUnit);
 
-                // Display result with 5 decimal places
-                output.setText(String.format("%.5f", result));
+                // Display result with 2 decimal places
+                output.setText(String.format("%.2f", result));
             }
         });
     }
@@ -75,35 +75,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Conversion logic based on selected units
+    // Conversion logic
     public double convert(double value, String fromUnit, String toUnit) {
-        // Conversion between the units
+        // Conversion between the unit
         if (fromUnit.equals("Metre") && toUnit.equals("Millimetre")) {
-            return value * 1000; // Convert Metres to Millimetres
+            return value * 1000;
         } else if (fromUnit.equals("Millimetre") && toUnit.equals("Metre")) {
-            return value / 1000; // Convert Millimetres to Metres
+            return value / 1000;
         } else if (fromUnit.equals("Metre") && toUnit.equals("Mile")) {
-            return value * 0.000621371; // Convert Metres to Miles
+            return value * 0.000621371;
         } else if (fromUnit.equals("Mile") && toUnit.equals("Metre")) {
-            return value / 0.000621371; // Convert Miles to Metres
+            return value / 0.000621371;
         } else if (fromUnit.equals("Metre") && toUnit.equals("Foot")) {
-            return value * 3.28084; // Convert Metres to Feet
+            return value * 3.28084;
         } else if (fromUnit.equals("Foot") && toUnit.equals("Metre")) {
-            return value / 3.28084; // Convert Feet to Metres
+            return value / 3.28084;
         } else if (fromUnit.equals("Millimetre") && toUnit.equals("Mile")) {
-            return value * 6.2137e-7; // Convert Millimetres to Miles
+            return value * 6.2137e-7;
         } else if (fromUnit.equals("Mile") && toUnit.equals("Millimetre")) {
-            return value / 6.2137e-7; // Convert Miles to Millimetres
+            return value / 6.2137e-7;
         } else if (fromUnit.equals("Millimetre") && toUnit.equals("Foot")) {
-            return value * 0.00328084; // Convert Millimetres to Feet
+            return value * 0.00328084;
         } else if (fromUnit.equals("Foot") && toUnit.equals("Millimetre")) {
-            return value / 0.00328084; // Convert Feet to Millimetres
+            return value / 0.00328084;
         } else if (fromUnit.equals("Mile") && toUnit.equals("Foot")) {
-            return value * 5280; // Convert Miles to Feet
+            return value * 5280;
         } else if (fromUnit.equals("Foot") && toUnit.equals("Mile")) {
-            return value / 5280; // Convert Feet to Miles
+            return value / 5280;
         } else {
-            // If the same unit is selected for both from and to, return the value as is
             return value;
         }
     }
