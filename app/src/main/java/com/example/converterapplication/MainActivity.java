@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 double result = convert(inputValue, fromUnit, toUnit);
 
                 // Display result with 2 decimal places
-                output.setText(String.format("%.2f", result));
+                output.setText(String.format("%.5f", result));
             }
         });
     }
